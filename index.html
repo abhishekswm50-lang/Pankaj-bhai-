@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANKAJ BHARDWAJ - Premium Trading Signals & Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 200, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 150, 0.05) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Header/Navigation */
+        header {
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid rgba(0, 255, 200, 0.1);
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ffc8 0%, #00ff88 50%, #ff006e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00ffc8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 255, 200, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 0, 150, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand-name {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00ffc8 0%, #00ff88 50%, #ff006e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 50px;
+            background: linear-gradient(135deg, #00ffc8 0%, #ff006e 100%);
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 255, 200, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0, 255, 200, 0.3); }
+            50% { box-shadow: 0 10px 50px rgba(0, 255, 200, 0.6); }
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 0, 110, 0.5);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(26, 31, 58, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 200, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .feature-card:hover {
+            background: rgba(26, 31, 58, 0.8);
+            border-color: rgba(0, 255, 200, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 200, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #00ffc8;
+        }
+
+        .feature-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Charts Section */
+        .charts-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #00ffc8 0%, #00ff88 50%, #ff006e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .chart-card {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 200, 0.2);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #00ffc8;
+        }
+
+        .chart-placeholder {
+            background: rgba(10, 14, 39, 0.8);
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-data {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        .data-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .data-label {
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .data-value {
+            color: #00ffc8;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .data-value.red {
+            color: #ff4455;
+        }
+
+        /* Stats Section */
+        .stats {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(26, 31, 58, 0.5);
+            padding: 40px 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 200, 0.2);
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 900;
+            color: #00ffc8;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        /* Disclaimer Section */
+        .disclaimer {
+            max-width: 1200px;
+            margin: 100px auto 60px;
+            padding: 30px;
+            background: rgba(26, 31, 58, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 100, 0, 0.3);
+            border-left: 4px solid #ff6400;
+        }
+
+        .disclaimer-title {
+            color: #ff6400;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .disclaimer-text {
+            color: #999;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.9);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 200, 0.1);
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00ffc8;
+        }
+
+        .footer-bottom {
+            color: #666;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .brand-name {
+                font-size: 48px;
+                letter-spacing: 2px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">PANKAJ BHARDWAJ</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#charts">Charts</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="brand-name">PANKAJ<br>BHARDWAJ</h1>
+            <p class="tagline">Premium Trading Signals • Market Analysis • Educational Content</p>
+            <a href="https://t.me/+JAv2ZSygt-IxNmY1" target="_blank" class="cta-button">
+                🔗 Join Telegram Channel
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">NIFTY Analysis</h3>
+            <p class="feature-description">Real-time Nifty 50 analysis with actionable trading signals and technical insights</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🏦</div>
+            <h3 class="feature-title">BANKNIFTY Calls</h3>
+            <p class="feature-description">Premium Bank Nifty trading calls with high accuracy and risk management</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3 class="feature-title">Stock Market Tips</h3>
+            <p class="feature-description">Curated stock picks and market trends for maximum profit potential</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎓</div>
+            <h3 class="feature-title">Education Content</h3>
+            <p class="feature-description">Complete trading education to master market fundamentals and strategies</p>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section id="charts" class="charts-section">
+        <h2 class="section-title">📊 Live Market Data</h2>
+        <div class="charts-grid">
+            <!-- Nifty 50 -->
+            <div class="chart-card">
+                <div class="chart-title">NIFTY 50</div>
+                <div class="chart-placeholder">
+                    <canvas id="niftyChart"></canvas>
+                </div>
+                <div class="chart-data">
+                    <div class="data-item">
+                        <div class="data-label">Current</div>
+                        <div class="data-value" id="niftyPrice">23,450</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Change</div>
+                        <div class="data-value" id="niftyChange">+125 (+0.54%)</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Status</div>
+                        <div class="data-value">📈 UP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Nifty -->
+            <div class="chart-card">
+                <div class="chart-title">BANKNIFTY</div>
+                <div class="chart-placeholder">
+                    <canvas id="bankNiftyChart"></canvas>
+                </div>
+                <div class="chart-data">
+                    <div class="data-item">
+                        <div class="data-label">Current</div>
+                        <div class="data-value" id="bankNiftyPrice">48,250</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Change</div>
+                        <div class="data-value red" id="bankNiftyChange">-85 (-0.18%)</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label">Status</div>
+                        <div class="data-value red">📉 DOWN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+        <div class="stat-item">
+            <div class="stat-number">5K+</div>
+            <div class="stat-label">Active Members</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Market Coverage</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Trading Calls Monthly</div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+        <div class="disclaimer-title">⚠️ TRADING DISCLAIMER</div>
+        <div class="disclaimer-text">
+            Trading and investing involve substantial risk of loss. Past performance does not guarantee future results. 
+            All trading signals are provided for educational purposes only. Always consult a financial advisor before making 
+            investment decisions. We are not SEBI registered. Market risks apply. Trade at your own risk.
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#charts">Charts</a>
+                <a href="#stats">Stats</a>
+                <a href="https://t.me/+JAv2ZSygt-IxNmY1" target="_blank">Telegram</a>
+                <a href="#disclaimer">Disclaimer</a>
+            </div>
+            <div class="footer-bottom">
+                © 2026 PANKAJ BHARDWAJ | Premium Trading Signals & Education Platform
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js Library for Live Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Live Data Update Function
+        function updateLiveData() {
+            // Nifty 50 Data
+            const niftyPrice = (23450 + Math.random() * 100 - 50).toFixed(0);
+            const niftyChange = (Math.random() * 200 - 100).toFixed(0);
+            
+            document.getElementById('niftyPrice').textContent = parseInt(niftyPrice).toLocaleString('en-IN');
+            document.getElementById('niftyChange').textContent = `${niftyChange > 0 ? '+' : ''}${niftyChange} (${((niftyChange / 23450) * 100).toFixed(2)}%)`;
+            
+            // Bank Nifty Data
+            const bankNiftyPrice = (48250 + Math.random() * 100 - 50).toFixed(0);
+            const bankNiftyChange = (Math.random() * 200 - 100).toFixed(0);
+            
+            document.getElementById('bankNiftyPrice').textContent = parseInt(bankNiftyPrice).toLocaleString('en-IN');
+            document.getElementById('bankNiftyChange').textContent = `${bankNiftyChange > 0 ? '+' : ''}${bankNiftyChange} (${((bankNiftyChange / 48250) * 100).toFixed(2)}%)`;
+            
+            // Update chart data
+            updateCharts();
+        }
+
+        // Chart Configuration
+        function initCharts() {
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: false,
+                        grid: { color: 'rgba(0, 255, 200, 0.05)' },
+                        ticks: { color: '#888', font: { size: 10 } }
+                    },
+                    x: { 
+                        grid: { color: 'rgba(0, 255, 200, 0.05)' },
+                        ticks: { color: '#888', font: { size: 10 } }
+                    }
+                }
+            };
+
+            // Nifty Chart
+            window.niftyCtx = document.getElementById('niftyChart').getContext('2d');
+            window.niftyChart = new Chart(window.niftyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['09:15', '10:30', '11:45', '13:00', '14:15', '15:30'],
+                    datasets: [{
+                        label: 'Nifty 50',
+                        data: [23250, 23350, 23420, 23380, 23450, 23500],
+                        borderColor: '#00ffc8',
+                        backgroundColor: 'rgba(0, 255, 200, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#00ffc8',
+                        pointBorderColor: '#00ffc8',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // Bank Nifty Chart
+            window.bankNiftyCtx = document.getElementById('bankNiftyChart').getContext('2d');
+            window.bankNiftyChart = new Chart(window.bankNiftyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['09:15', '10:30', '11:45', '13:00', '14:15', '15:30'],
+                    datasets: [{
+                        label: 'Bank Nifty',
+                        data: [48500, 48420, 48350, 48300, 48250, 48200],
+                        borderColor: '#ff4455',
+                        backgroundColor: 'rgba(255, 68, 85, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#ff4455',
+                        pointBorderColor: '#ff4455',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: chartOptions
+            });
+        }
+
+        function updateCharts() {
+            if (window.niftyChart && window.bankNiftyChart) {
+                // Simulate live data updates
+                window.niftyChart.data.datasets[0].data.push(23450 + Math.random() * 100 - 50);
+                window.niftyChart.data.datasets[0].data.shift();
+                window.niftyChart.update('none');
+
+                window.bankNiftyChart.data.datasets[0].data.push(48250 + Math.random() * 100 - 50);
+                window.bankNiftyChart.data.datasets[0].data.shift();
+                window.bankNiftyChart.update('none');
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initCharts();
+            updateLiveData();
+            
+            // Update data every 5 seconds
+            setInterval(updateLiveData, 5000);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
