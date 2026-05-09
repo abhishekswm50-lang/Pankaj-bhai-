@@ -54,7 +54,7 @@
             display: inline-block;
         }
 
-        /* IMAGE HERE: 'pankaj.jpg' ko apni file name se badal dein */
+        /* AB YAHAN IMAGE BILKUL SAHI LOAD HOGI */
         .profile-img {
             width: 180px;
             height: 180px;
@@ -62,7 +62,14 @@
             border: 3px solid var(--primary);
             padding: 5px;
             object-fit: cover;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 200, 0.3));
+            /* Aapki image ke liye special neon glow effect */
+            box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
+            transition: 0.4s;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(0, 255, 200, 0.6);
         }
 
         .hero h1 {
@@ -151,7 +158,7 @@
 
     <section class="hero">
         <div class="profile-box">
-            <img src="pankaj.jpg" alt="Pankaj Bhardwaj" class="profile-img">
+            <img src="https://i.ibb.co/9903jwDq/IMG-20260508-183120-373.webp" alt="Pankaj Bhardwaj" class="profile-img">
         </div>
         <h1>Master The Market <br>With Precision</h1>
         <p>Premium Trading Signals | Nifty & BankNifty Experts | Real-time Analysis</p>
